@@ -1,48 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mascote Bela Mares AR</title>
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-  <style>
-    body { margin: 0; overflow: hidden; }
-    #instrucao {
-      position: fixed; top: 0; left: 0; right: 0;
-      background: rgba(0,156,59,0.90); color: #FFDF00;
-      font-family: Arial Black, sans-serif; font-size: 1rem;
-      text-align: center; padding: 12px; z-index: 999;
-      border-bottom: 3px solid #FFDF00;
-    }
-  </style>
 </head>
 <body>
-  <div id="instrucao">📸 Aponte a câmera para o pôster!</div>
-
   <a-scene
-    mindar-image="imageTargetSrc: ./targets.mind; filterMinCF:0.001; filterBeta:1000;"
-    color-space="sRGB"
-    renderer="colorManagement: true, physicallyCorrectLights"
+    mindar-image="imageTargetSrc: ./targets.mind;"
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
-
-    <a-assets>
-      <a-asset-item id="mascote" src="./belinhafinal-v3.glb"></a-asset-item>
-    </a-assets>
-
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-
     <a-entity mindar-image-target="targetIndex: 0">
-      <a-gltf-model
-        src="#mascote"
-        position="0 0 0"
-        rotation="0 0 0"
-        scale="1.6 1.6 1.6"
-        animation-mixer="clip: mixamo.com; loop: repeat; crossFadeDuration: 0.3">
-      </a-gltf-model>
+      <a-box position="0 0 0" scale="0.5 0.5 0.5" color="red"></a-box>
     </a-entity>
-
   </a-scene>
 </body>
 </html>
